@@ -1,25 +1,37 @@
-import React, { useState } from 'react'
+import React, { useReducer, useState } from 'react'
 import './style.css'
 
-const UseState = () => {
-    const data = 0;
-    const [num, setNum] = useState(data)
     
+const reducer = (state, action)=>{
+    if(action.type === "INCR")
+    {
+        state = state+1;
+    }
+    
+    if(state > 0 && action.type === "DECR")
+    {
+        state = state-1;
+    }
+
+    return state;
+};
+
+const UseReducer = () => {
+    const initialData = 0;
+    const [state, dispatch] = useReducer(reducer, initialData)
+
     return (
     <>
     <div className="center_div">
-        <p>{num}</p>
-        <div className="button2" onClick={()=>{
-            setNum(num+1)
-        }}>
+        <p>{state}</p>
+        <div className="button2" onClick={()=>dispatch({type:"INCR"})}>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
             INCR
         </div>
-        <div className="button2" 
-        onClick={()=>num > 0 ? setNum(num - 1):setNum(0)}>
+        <div className="button2" onClick={()=>dispatch({type:"DECR"})}>
             <span></span>
             <span></span>
             <span></span>
@@ -31,4 +43,4 @@ const UseState = () => {
     )
 }
 
-export default UseState;
+export default UseReducer;
