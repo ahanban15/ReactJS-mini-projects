@@ -28,7 +28,7 @@ const UseState = () => {
         </div>
     </div>
     </>
-  )
+    )
 }
 
-export default UseState
+export default UseState;
