@@ -1,25 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './style.css'
 
-const UseEffect = () => {
+const UseState = () => {
     const data = 0;
     const [num, setNum] = useState(data)
     
-    // useEffect(() => {
-    // //   first
-    
-    // //   return () => {
-    // //     second
-    // //   }
-    // // }, [third])
-    // console.log("Hemlo");
-    // });
-    
-    useEffect(() => {
-      document.title = `React Practice (${num})`;
-    })
-    
-
     return (
     <>
     <div className="center_div">
@@ -33,9 +18,17 @@ const UseEffect = () => {
             <span></span>
             INCR
         </div>
+        <div className="button2" 
+        onClick={()=>num > 0 ? setNum(num - 1):setNum(0)}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            DECR
+        </div>
     </div>
     </>
     )
 }
 
-export default UseEffect;
+export default UseState;

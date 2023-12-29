@@ -1,8 +1,11 @@
 import React from 'react';
-import UseState from './components/Hooks/UseStateHook';
+//mport UseState from './components/Hooks/UseStateHook';
+import UseEffect from './components/Hooks/UseEffectHook';
 
 function App() {
-  return <UseState />;
+  
+  // return <UseState />;
+  return <UseEffect />;
 }
 
 export default App;
